@@ -6,4 +6,4 @@ Whatever I put in this README file can be by default my homepage on md.github.io
 
 ![cat photo](http://placekitten.com/g/500/300)
 
-there you go.
+there you go..

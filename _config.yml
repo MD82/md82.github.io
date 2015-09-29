@@ -1,14 +1,18 @@
 # Site settings
-title: 워시퍼의 하루
-email: md82@tistory.com
-description: > # this means to ignore newlines until "baseurl:"
-  처음으로 github 사이트에 jekyll을 설치하여 블로그로 이용해보려고 합니다.
-  쉽지는 않겠지만, 조금씩 배워보겠습니다.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://md82.github.io" # the base hostname & protocol for your site
-twitter_username: md_w
-github_username:  md82
-highlighter: false
+title: Site Title
+email: somename@somedomain.com
+description: "Site Description"
+logo_location: "http://placehold.it/100x100&text=LOGO"
+
+#baseurl: "" # the subpath of your site, e.g. /blog/
+#url: "" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+
+highlighter: pygments
+
+#Other Global Configuration
+exclude: ['README.md']

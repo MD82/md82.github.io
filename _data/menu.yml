@@ -4,14 +4,15 @@ mainmenu:
     url: "/"
     text: "Home"
     icon_class: "fa-home"
+  Tistory:
+      url: "http://md82.tistory.com"
+      text: "Tistory"
+  Wordpress:
+      url: "http://md82.co-story.net"
+      text: "Wordpress"
   aboutme:
-    url: "/about/"
-    text: "About Me"
-    icon_class: "fa-info-circle"
-  LJC:
-    url: "http://ljc.net84.net"
-    text: "Little Jesus"
-  Naeri:
-    url: "http://naeri.site90.net"
-    text: "Naeri Church"
+      url: "/about/"
+      text: "About Me"
+      icon_class: "fa-info-circle"
+
 

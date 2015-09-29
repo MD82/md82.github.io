@@ -1,8 +1,8 @@
 # Site settings
-title: Site Title
-email: somename@somedomain.com
-description: "Site Description"
-logo_location: "http://placehold.it/100x100&text=LOGO"
+title: 워시퍼의 하루
+email: md82@tistory.com
+description: "MD워시퍼의 Github"
+logo_location: "https://31.media.tumblr.com/avatar_49fc80475b1e_128.png"
 
 #baseurl: "" # the subpath of your site, e.g. /blog/
 #url: "" # the base hostname & protocol for your site

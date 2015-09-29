@@ -8,3 +8,10 @@ mainmenu:
     url: "/about/"
     text: "About Me"
     icon_class: "fa-info-circle"
+  LJC:
+    url: "http://ljc.net84.net"
+    text: "Little Jesus"
+  Naeri:
+    url: "http://naeri.site90.net"
+    text: "Naeri Church"
+

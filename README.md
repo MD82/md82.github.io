@@ -1,19 +1,6 @@
 # README #
 
-A simple blog template for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>.
-
-Uses:
-* Twitter Bootstrap 3.2.0
-* Font Awesome 4.2.0
-
-
-Here is a <a href="http://itsrifat.github.io/rifyll/" target="_blank">Demo</a>
-
-To get started:
-* Fork this repo
-* Edit [_config.yml](_config.yml):
-  * Change logo_location
-* Edit [_data/menu.yml](_data/menu.yml) to edit menu
-
-To create a post:
-* Create a **.md** or **.markdown** file in the _post directory. Add a thumbnail image for the post in the yml front matter, its shown as the post thumbnail in the homepage
+Hello~ My MD's Life.<br>
+My Blog is Copy template for Jekyll.<br>
+And Write My Lift & study contents.<br>
+I love Github and my Blogs

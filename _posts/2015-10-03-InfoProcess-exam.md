@@ -2,7 +2,6 @@
 layout: post
 tags: new info language exam
 date: 2015-10-03 22:51
-thumbnail: http://placehold.it/100x100
 title: 신기술언어
 published: true
 ---

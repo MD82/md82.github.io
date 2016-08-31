@@ -7,9 +7,6 @@ mainmenu:
   Tistory:
       url: "http://md82.tistory.com"
       text: "Tistory"
-  Wordpress:
-      url: "http://md82.co-story.net"
-      text: "Wordpress"
   aboutme:
       url: "/about/"
       text: "About Me"

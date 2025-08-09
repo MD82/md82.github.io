@@ -4,6 +4,12 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', '@nuxtjs/tailwindcss'],
   content: {
     // https://content.nuxt.com/get-started/configuration
+    defaults: {
+      // 'content/blog' 경로 아래의 모든 파일에 적용될 기본값
+      _blog: {
+        published: true
+      }
+    }
   },
   app: {
     head: {

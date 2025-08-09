@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: Stress Company
+tags: ["Stress","Company"]
 date: 2019-10-04 18:36
 title: 회사생활 안에서의 스트레스
 published: true

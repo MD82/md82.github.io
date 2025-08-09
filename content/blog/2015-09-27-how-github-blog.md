@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: blog github mobile
+tags: ["blog","github","mobile"]
 date: 2015-09-27 13:06
 thumbnail: http://placehold.it/100x100
 title: Github.io Blog 활용법

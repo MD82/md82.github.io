@@ -72,7 +72,7 @@ const checkAndLoadMore = async () => {
   while (
     hasMore.value &&
     document.documentElement.scrollHeight <= document.documentElement.clientHeight
-    ) {
+  ) {
     if (isLoading.value) break; // 혹시 모를 중복 실행 방지
     await fetchPosts()
     await nextTick()

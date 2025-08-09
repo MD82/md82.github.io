@@ -1,9 +1,9 @@
 ---
 layout: post
-tags: songlist naeri church
+tags: ["Songlist","Naeri","Church"]
 date: 2017-01-01 10:30
 thumbnail: http://placehold.it/100x100
-title: "&#91; 내리교회 초등부 &#93; 2017년 1월 1일 찬양 송리스트"
+title: "[내리교회 초등부] 2017년 1월 1일 찬양 송리스트"
 published: true
 ---
 

@@ -1,17 +1,11 @@
 ---
 layout: post
-tags: Wedding Honeymoon
+tags: ['Wedding','Honeymoon']
 date: 2017-04-22 21:36
 title: 신혼여행 이후 꼭 챙겨야 할 일
 published: true
 ---
-<style type="text/css" >
- <!--
-  h4 {
-   text-indent : 10pt;
-  } 
- -->
-</style>
+
 <h3>1주 - 도움 주신 분들께 인사</h3>
 <h4>1. 시댁에 인사드리기</h4>
 <ul><li>신혼여행에서 돌아온 후, 친정에 들러 하룻밤을 보내고 다음날 오후 시간에 맞춰 시댁으로 인사드리러 가는 것이 일반적</li>

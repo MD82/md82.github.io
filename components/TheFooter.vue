@@ -5,7 +5,7 @@
         <div class="col-lg-offset-3 col-lg-6">
           <div class="row">
             <div class="col-xs-12 text-center">
-              <small>&copy; CopyRight 2015</small>
+              <small>&copy; CopyRight 2025</small>
             </div>
           </div>
         </div>

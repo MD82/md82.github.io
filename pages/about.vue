@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <article class="prose lg:prose-xl max-w-none">
     <ContentDoc path="/about" />
-  </div>
+  </article>
 </template>
 
 <script setup>

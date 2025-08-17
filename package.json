@@ -18,7 +18,6 @@
     "@nuxt/content": "^2.13.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "nuxt": "^3.12.3",
-    "sass": "^1.90.0",
-    "vite-tsconfig-paths": "^5.1.4"
+    "sass": "^1.90.0"
   }
 }

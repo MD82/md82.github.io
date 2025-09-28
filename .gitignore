@@ -1,4 +1,9 @@
 .idea
 .nuxt
-node_modules
+.vscode
+.output
+.claude-code-router
+*.md
+node_modules/
+server/
 package-lock.json

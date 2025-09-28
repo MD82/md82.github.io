@@ -11,21 +11,39 @@
     <div v-else-if="error" class="text-center text-red-500">
       <p>Error fetching posts. Please try again later.</p>
     </div>
-    <div v-else class="space-y-12">
-      <article v-for="post in posts" :key="post._path">
-        <p class="text-slate-500 text-sm">
-          <time :datetime="post.date">{{ formattedDate(post.date) }}</time>
-        </p>
-        <h2 class="mt-2 text-2xl font-bold text-slate-800 hover:text-sky-600 transition-colors duration-200">
-          <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
-        </h2>
-        <p v-if="post.description" class="mt-3 text-slate-600">
-          {{ post.description }}
-        </p>
-        <NuxtLink :to="post._path" class="mt-4 inline-block text-sky-600 font-semibold hover:text-sky-800">
-          Read more &rarr;
-        </NuxtLink>
-      </article>
+    <div v-else class="space-y-8">
+      <!-- Posts Count -->
+      <div class="text-slate-600 text-sm">
+        총 {{ posts?.length || 0 }}개의 포스트
+      </div>
+
+      <!-- Posts Grid -->
+      <div class="space-y-8">
+        <article v-for="post in posts" :key="post._path" class="border-b border-slate-200 pb-8 last:border-b-0">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+            <p class="text-slate-500 text-sm">
+              <time :datetime="post.date">{{ formattedDate(post.date) }}</time>
+            </p>
+            <div v-if="post.tags && post.tags.length" class="flex flex-wrap gap-2 mt-2 sm:mt-0">
+              <span v-for="tag in post.tags.slice(0, 3)" :key="tag" class="bg-slate-100 text-slate-600 text-xs px-2 py-1 rounded">
+                {{ tag }}
+              </span>
+            </div>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-800 hover:text-sky-600 transition-colors duration-200 mb-3">
+            <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
+          </h2>
+          <p v-if="post.description" class="text-slate-600 mb-4 line-clamp-3">
+            {{ post.description }}
+          </p>
+          <NuxtLink :to="post._path" class="inline-flex items-center text-sky-600 font-semibold hover:text-sky-800 transition-colors duration-200">
+            자세히 읽기
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </NuxtLink>
+        </article>
+      </div>
     </div>
   </div>
 </template>
@@ -48,4 +66,21 @@ const formattedDate = (dateString) => {
     day: 'numeric',
   })
 }
+
+// SEO
+useHead({
+  title: 'Blog - 워시퍼의 하루',
+  meta: [
+    { name: 'description', content: '개발자 MD워시퍼의 모든 블로그 포스트를 확인하세요. 기술, 신앙, 일상에 대한 다양한 이야기들을 만나보실 수 있습니다.' }
+  ]
+})
 </script>
+
+<style scoped>
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style>

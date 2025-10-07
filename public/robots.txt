@@ -1,4 +1,2 @@
 User-Agent: *
 Allow: /
-
-Sitemap: https://md82.github.io/sitemap.xml

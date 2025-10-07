@@ -42,7 +42,7 @@ export default defineNuxtConfig({
   // Nitro configuration for better performance
   nitro: {
     prerender: {
-      routes: ['/sitemap.xml']
+      routes: []
     }
   },
 

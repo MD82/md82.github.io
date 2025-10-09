@@ -20,6 +20,7 @@
       <ul class="hidden md:flex items-center space-x-4">
         <li><NuxtLink to="/blog" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-800">Blog</NuxtLink></li>
         <li><NuxtLink to="/about" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-800">About</NuxtLink></li>
+        <li><NuxtLink to="/search_hymns" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-800">찬송가 검색엔진</NuxtLink></li>
       </ul>
     </nav>
 
@@ -28,6 +29,7 @@
       <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         <li><NuxtLink to="/blog" @click="isOpen = false" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800">Blog</NuxtLink></li>
         <li><NuxtLink to="/about" @click="isOpen = false" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800">About</NuxtLink></li>
+        <li><NuxtLink to="/search_hymns" @click="isOpen = false" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-800">찬송가 검색엔진</NuxtLink></li>
       </ul>
     </div>
   </header>

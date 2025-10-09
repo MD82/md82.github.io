@@ -1,60 +1,83 @@
 <template>
   <div class="container mx-auto p-4">
-    <h1 class="text-2xl font-bold mb-4">찬송가 검색엔진</h1>
-    <div class="mb-4">
-      <input 
-        v-model="searchQuery" 
-        type="text" 
-        placeholder="찬송가 제목 또는 가사를 입력하세요..." 
-        class="w-full md:w-2/3 p-2 border border-gray-300 rounded mr-2"
+    <h1 class="text-2xl font-bold mb-4">새찬송가 {{ currentHymnId }}장</h1>
+
+    <!-- 악보 이미지 표시 -->
+    <div class="mb-8 flex justify-center">
+      <img
+        :src="`/hymns/${currentHymnId}.jpg`"
+        :alt="`새찬송가 ${currentHymnId}장 악보`"
+        class="max-w-full h-auto border border-gray-300 rounded shadow-lg"
+        @error="handleImageError"
       />
-      <button 
-        @click="performSearch" 
-        class="mt-2 md:mt-0 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-      >
-        검색
-      </button>
     </div>
-    <div v-if="results.length > 0">
-      <h2 class="text-xl font-semibold">검색 결과:</h2>
-      <ul>
-        <li v-for="(result, index) in results" :key="index" class="p-2 border-b border-gray-200">
-          {{ result.title }} - {{ result.content.substring(0, 100) }}...
-        </li>
-      </ul>
-    </div>
-    <div v-else-if="searchQuery && results.length === 0">
-      <p>검색 결과가 없습니다.</p>
+
+    <!-- 찬송가 리스트 (페이지네이션) -->
+    <div class="mt-8">
+      <div class="flex items-center gap-4 mb-4">
+        <h2 class="text-xl font-semibold">찬송가 목록</h2>
+        <input
+          v-model="jumpToNumber"
+          type="number"
+          min="1"
+          max="645"
+          placeholder="번호 입력"
+          @keyup.enter="jumpToHymn"
+          class="w-24 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div class="grid grid-cols-5 sm:grid-cols-10 md:grid-cols-15 gap-2">
+        <button
+          v-for="hymnNumber in totalHymns"
+          :key="hymnNumber"
+          @click="goToHymn(hymnNumber)"
+          :class="[
+            'p-2 rounded border transition-colors',
+            hymnNumber === currentHymnId
+              ? 'bg-blue-500 text-white border-blue-600'
+              : 'bg-white hover:bg-gray-100 border-gray-300'
+          ]"
+        >
+          {{ hymnNumber }}
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 
-const searchQuery = ref('');
-const results = ref([]);
+const router = useRouter();
+const route = useRoute();
 
-// 실제 검색 로직은 여기에 구현해야 합니다.
-// 예시를 위해 간단한 더미 데이터를 사용합니다.
-const hymns = [
-  { id: 1, title: '찬송가 1장', content: '찬송가 1장의 가사 내용...' },
-  { id: 2, title: '찬송가 2장', content: '찬송가 2장의 가사 내용...' },
-  { id: 3, title: '찬송가 3장', content: '찬송가 3장의 가사 내용...' },
-  // 더 많은 데이터가 필요합니다.
-];
+const totalHymns = 645;
+const jumpToNumber = ref('');
 
-const performSearch = () => {
-  // 검색 쿼리가 비어있을 경우 결과를 초기화합니다.
-  if (!searchQuery.value.trim()) {
-    results.value = [];
-    return;
+// 현재 찬송가 번호 (URL 쿼리 파라미터 또는 기본값 1)
+const currentHymnId = computed(() => {
+  const id = parseInt(route.query.page) || 1;
+  return id >= 1 && id <= totalHymns ? id : 1;
+});
+
+// 찬송가 번호를 클릭했을 때 해당 페이지로 이동
+const goToHymn = (hymnNumber) => {
+  router.push({ path: '/search_hymns', query: { page: hymnNumber } });
+};
+
+// 입력된 번호로 이동
+const jumpToHymn = () => {
+  const number = parseInt(jumpToNumber.value);
+  if (number >= 1 && number <= totalHymns) {
+    goToHymn(number);
+    jumpToNumber.value = '';
   }
+};
 
-  // 간단한 문자열 포함 검색 (대소문자 구분 없음)
-  results.value = hymns.filter(hymn => 
-    hymn.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-    hymn.content.toLowerCase().includes(searchQuery.value.toLowerCase())
-  );
+// 이미지 로드 실패 시 처리
+const handleImageError = (event) => {
+  event.target.src = '/hymns/placeholder.jpg'; // 플레이스홀더 이미지
+  event.target.alt = '악보 이미지를 불러올 수 없습니다';
 };
 </script>

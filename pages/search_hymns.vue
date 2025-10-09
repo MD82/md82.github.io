@@ -52,7 +52,7 @@ import { useRouter, useRoute } from 'vue-router';
 const router = useRouter();
 const route = useRoute();
 
-const totalHymns = 645;
+const totalHymns = 3;
 const jumpToNumber = ref('');
 
 // 현재 찬송가 번호 (URL 쿼리 파라미터 또는 기본값 1)

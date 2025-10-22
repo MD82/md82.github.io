@@ -55,29 +55,29 @@ const route = useRoute();
 const totalHymns = 3;
 const jumpToNumber = ref('');
 
-// 현재 찬송가 번호 (URL 쿼리 파라미터 또는 기본값 1)
+// 현재 찬송가 번호 (URL 파라미터 또는 기본값 1)
 const currentHymnId = computed(() => {
-  const id = parseInt(route.query.page) || 1;
+  const id = parseInt(route.params.id) || (parseInt(route.query.page) || 1);
   return id >= 1 && id <= totalHymns ? id : 1;
 });
 
 // 찬송가 번호를 클릭했을 때 해당 페이지로 이동
 const goToHymn = (hymnNumber) => {
-  router.push({ path: '/search_hymns', query: { page: hymnNumber } });
+  router.push({ path: `/search_hymns/${hymnNumber}` });
 };
 
 // 입력된 번호로 이동
 const jumpToHymn = () => {
   const number = parseInt(jumpToNumber.value);
   if (number >= 1 && number <= totalHymns) {
-    goToHymn(number);
+    router.push({ path: `/search_hymns/${number}` });
     jumpToNumber.value = '';
   }
 };
 
 // 이미지 로드 실패 시 처리
 const handleImageError = (event) => {
-  event.target.src = '/hymns/placeholder.jpg'; // 플레이스홀더 이미지
+  event.target.src = '/hymns/placeholder.svg'; // 플레이스홀더 이미지
   event.target.alt = '악보 이미지를 불러올 수 없습니다';
 };
 </script>

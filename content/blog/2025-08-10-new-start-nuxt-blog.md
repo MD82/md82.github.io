@@ -1,9 +1,10 @@
 ---
-layout: post
-tags: ["nuxt","Study"]
-date: 2025-08-13 06:36
 title: Jekill to Nuxt Blog
-published: true
+date: "2025-08-13T06:36:00+09:00"
+tags:
+  - nuxt
+  - Study
+draft: false
 ---
 이 블로그를 이용한지도 어언 10년..<br>
 난 발전을 정말 하고 있나? 개발한지도 어언 15~16년이네.<br>

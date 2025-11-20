@@ -1,9 +1,10 @@
 ---
-layout: post
-tags: ["Stress","Company"]
-date: 2019-10-04 18:36
 title: 회사생활 안에서의 스트레스
-published: true
+date: "2019-10-04T18:36:00+09:00"
+tags:
+  - Stress
+  - Company
+draft: false
 ---
 프로젝트를 시작하면서, 해야할 일이 많아졌다.<br>
 유지보수도 해야하고, 개발도 해야하고, 업무분석 및 업무분배도 해야하고.<br>

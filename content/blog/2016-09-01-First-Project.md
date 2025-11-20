@@ -1,10 +1,12 @@
 ---
-layout: post
-tags: first project AMIS
-date: "2016-08-31 21:36"
-thumbnail: "http://placehold.it/100x100"
 title: 새로운 회사의 첫 프로젝트
-published: true
+date: "2016-08-31T21:36:00+09:00"
+tags:
+  - first
+  - project
+  - AMIS
+thumbnail: "http://placehold.it/100x100"
+draft: false
 ---
 
 IT를 떠나려고 했던 내가, 다시 IT를 하고 있다.<br>

@@ -1,0 +1,43 @@
+{{ define "title" }}{{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<section class="hero">
+  <p class="eyebrow">워시퍼의 하루</p>
+  <h1>기술, 신앙, 일상에 대한 기록</h1>
+  <p class="lede">{{ .Site.Params.description }}</p>
+  <div class="hero-actions">
+    <a class="button" href="/blog/">블로그 보기</a>
+    <a class="text-link" href="/index.xml">RSS 구독</a>
+  </div>
+</section>
+
+{{ $all := where .Site.RegularPages "Section" "blog" }}
+{{ $published := where $all "Params.published" "ne" false }}
+{{ $recent := first 6 ($published.ByDate.Reverse) }}
+<section>
+  <div class="section-header">
+    <h2>최근 포스트</h2>
+    <a class="text-link" href="/blog/">모든 포스트 보기 &rarr;</a>
+  </div>
+  <div class="post-grid">
+    {{ range $recent }}
+    <article class="post-card">
+      <p class="meta">{{ .Date.Format "2006년 1월 2일" }}</p>
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      {{ with .Params.description }}
+        <p class="summary">{{ . | plainify | truncate 140 }}</p>
+      {{ else }}
+        <p class="summary">{{ .Summary | plainify | truncate 140 }}</p>
+      {{ end }}
+      {{ with .Params.tags }}
+      <div class="tags">
+        {{ range first 3 . }}
+          <span class="tag">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+      <a class="read-more" href="{{ .RelPermalink }}">읽어보기 &rarr;</a>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

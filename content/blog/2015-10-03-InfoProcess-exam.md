@@ -1,9 +1,12 @@
 ---
-layout: post
-tags: new info language exam
-date: 2015-10-03 22:51
 title: 신기술언어
-published: true
+date: "2015-10-03T22:51:00+09:00"
+tags:
+  - new
+  - info
+  - language
+  - exam
+draft: false
 ---
 
 ::InfoBox{type="warning" title="키의 개념"}

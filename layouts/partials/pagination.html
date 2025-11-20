@@ -1,0 +1,11 @@
+{{ if gt .TotalPages 1 }}
+<nav class="pagination">
+  {{ if .HasPrev }}
+    <a class="page-link" href="{{ .Prev.URL }}">&larr; 이전</a>
+  {{ end }}
+  <span class="page-info">페이지 {{ .PageNumber }} / {{ .TotalPages }}</span>
+  {{ if .HasNext }}
+    <a class="page-link" href="{{ .Next.URL }}">다음 &rarr;</a>
+  {{ end }}
+</nav>
+{{ end }}

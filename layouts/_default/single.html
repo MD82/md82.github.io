@@ -1,0 +1,34 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<article class="post">
+  <p class="meta">{{ .Date.Format "2006년 1월 2일" }}</p>
+  <h1>{{ .Title }}</h1>
+
+  {{ with .Params.tags }}
+  <div class="tags">
+    {{ range . }}
+      <span class="tag">{{ . }}</span>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ with .Params.thumbnail }}
+  <figure class="thumb">
+    <img src="{{ . }}" alt="">
+  </figure>
+  {{ end }}
+
+  <div class="post-body">
+    {{ .Content }}
+  </div>
+</article>
+
+<div class="post-nav">
+  {{ with .PrevInSection }}
+    <a class="page-link" href="{{ .RelPermalink }}">&larr; {{ .Title }}</a>
+  {{ end }}
+  {{ with .NextInSection }}
+    <a class="page-link" href="{{ .RelPermalink }}">{{ .Title }} &rarr;</a>
+  {{ end }}
+</div>
+{{ end }}

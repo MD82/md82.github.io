@@ -1,9 +1,7 @@
 .idea
-.nuxt
 .vscode
-.output
-*.md
-
-node_modules/
-server/
-package-lock.json
+public/
+resources/_gen/
+hugo_stats.json
+.DS_Store
+.hugo_build.lock

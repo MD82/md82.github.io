@@ -1,75 +1,30 @@
-# Nuxt Minimal Starter
+# Hugo 블로그
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt 정적 사이트 대신 Hugo 기반 블로그로 전환한 브랜치입니다. `content/blog/*.md` 포스트만 남기고 새 Hugo 구조를 구성했습니다.
 
-## Setup
+## 구성
+- `config.toml`: 사이트 설정, 퍼머링크 `/blog/:filename/`
+- `layouts/`: 기본 레이아웃, 홈, 리스트, 단일 포스트 템플릿
+- `static/css/main.css`: 기본 스타일
+- `archetypes/default.md`: 새 글 작성 시 기본 front matter
 
-Make sure to install dependencies:
+## 로컬 실행
+1) Hugo Extended 설치  
+   - macOS: `brew install hugo`  
+   - Debian/Ubuntu: `sudo apt-get install hugo` (또는 공식 릴리스 바이너리 다운로드)  
+   - Windows: Hugo Extended zip 다운로드 후 PATH 등록
 
+2) 개발 서버 실행  
 ```bash
-# npm
-npm install
+hugo server -D
+```  
+`http://localhost:1313`에서 확인합니다.
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+3) 정적 빌드  
 ```bash
-# npm
-npm run dev
+hugo
+```  
+`public/` 폴더가 배포 산출물입니다.
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 비고
+- 이 환경에서는 네트워크/권한 제약으로 `hugo` 설치를 시도했으나 거부되었습니다. 위 설치 방법으로 Hugo를 설치한 뒤 실행해주세요.

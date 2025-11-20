@@ -1,0 +1,34 @@
+{{ define "title" }}Blog | {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<section class="page-header">
+  <p class="eyebrow">블로그</p>
+  <h1>기술, 신앙, 일상에 대한 기록</h1>
+  <p class="lede">{{ .Site.Params.description }}</p>
+</section>
+
+{{ $posts := where .Pages "Params.published" "ne" false }}
+{{ $paginator := .Paginate ($posts.ByDate.Reverse) }}
+<div class="post-list">
+  {{ range $paginator.Pages }}
+  <article class="post-card">
+    <p class="meta">{{ .Date.Format "2006년 1월 2일" }}</p>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    {{ with .Params.description }}
+      <p class="summary">{{ . }}</p>
+    {{ else }}
+      <p class="summary">{{ .Summary | plainify }}</p>
+    {{ end }}
+    {{ with .Params.tags }}
+    <div class="tags">
+      {{ range . }}
+        <span class="tag">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+    <a class="read-more" href="{{ .RelPermalink }}">읽어보기 &rarr;</a>
+  </article>
+  {{ end }}
+</div>
+
+{{ partial "pagination.html" $paginator }}
+{{ end }}

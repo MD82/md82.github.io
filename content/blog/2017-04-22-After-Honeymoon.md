@@ -1,9 +1,10 @@
 ---
-layout: post
-tags: ['Wedding','Honeymoon']
-date: 2017-04-22 21:36
 title: 신혼여행 이후 꼭 챙겨야 할 일
-published: true
+date: "2017-04-22T21:36:00+09:00"
+tags:
+  - Wedding
+  - Honeymoon
+draft: false
 ---
 
 <h3>1주 - 도움 주신 분들께 인사</h3>

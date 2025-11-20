@@ -1,0 +1,21 @@
+baseURL = "/"
+languageCode = "ko-kr"
+title = "워시퍼의 하루"
+summaryLength = 120
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  description = "개발자 MD워시퍼의 기술, 신앙, 일상에 대한 생각들을 기록하는 개인 블로그"
+  author = "MD워시퍼"
+
+[permalinks]
+  blog = "/blog/:contentbasename/"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]

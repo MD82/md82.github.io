@@ -1,10 +1,12 @@
 ---
-layout: post
-tags: lastday Company retireday
-date: "2015-11-17 12:36"
-thumbnail: "http://placehold.it/100x100"
 title: 회사를 마치는 날..
-published: true
+date: "2015-11-17T12:36:00+09:00"
+tags:
+  - lastday
+  - Company
+  - retireday
+thumbnail: "http://placehold.it/100x100"
+draft: false
 ---
 
 이제 4년 반동안 다녔던 회사를 마치고, 잠시 쉬고자 한다.<br>

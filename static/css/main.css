@@ -8,7 +8,7 @@
   --card: #ffffff;
   --border: #e5e7eb;
   --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-  --container-padding: clamp(0.75rem, 4vw, 1.5rem);
+  --container-padding: clamp(1rem, 4vw, 1.5rem);
   --hero-padding: clamp(1.4rem, 5vw, 2.5rem);
   --card-padding: clamp(1rem, 4vw, 1.35rem);
   --card-radius: 14px;
@@ -63,6 +63,17 @@ a:hover {
   letter-spacing: -0.01em;
 }
 
+/* Mobile margins for brand and nav */
+@media (max-width: 640px) {
+  .brand {
+    margin-left: 1rem;
+  }
+  
+  .nav {
+    margin-right: 1rem;
+  }
+}
+
 .nav a {
   margin-left: clamp(0.6rem, 2vw, 1rem);
   font-weight: 600;
@@ -115,6 +126,7 @@ a:hover {
 
 .page-header {
   margin-bottom: 2rem;
+  padding: 0 1rem;
 }
 
 .page-header h1 {
@@ -126,7 +138,7 @@ a:hover {
   letter-spacing: 0.08em;
   color: var(--accent);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .lede {
@@ -139,6 +151,7 @@ a:hover {
   align-items: baseline;
   justify-content: space-between;
   margin-bottom: 1rem;
+  padding: 0 1rem;
 }
 
 .post-grid {
@@ -207,6 +220,34 @@ a:hover {
   margin: 0.3rem 0 0.8rem;
 }
 
+.post-header {
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+.back-to-blog {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: rgba(14, 165, 233, 0.05);
+  transition: all 120ms ease;
+}
+
+.back-to-blog:hover {
+  background: rgba(14, 165, 233, 0.1);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.post {
+  padding: 0 1rem;
+}
+
 .post-body img {
   max-width: 100%;
   height: auto;
@@ -248,11 +289,13 @@ a:hover {
   align-items: flex-start;
   gap: 0.6rem;
   margin-top: clamp(1.5rem, 4vw, 2rem);
+  padding: 0 1rem;
 }
 
 .page-link {
   color: var(--accent);
   font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .pagination {

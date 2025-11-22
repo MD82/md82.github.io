@@ -1,5 +1,9 @@
 {{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
 {{ define "main" }}
+<div class="post-header">
+  <a class="back-to-blog" href="/blog/">← Blog 목록</a>
+</div>
+
 <article class="post">
   <p class="meta">{{ .Date.Format "2006년 1월 2일" }}</p>
   <h1>{{ .Title }}</h1>
@@ -25,10 +29,10 @@
 
 <div class="post-nav">
   {{ with .PrevInSection }}
-    <a class="page-link" href="{{ .RelPermalink }}">&larr; {{ .Title }}</a>
+    <a class="page-link" href="{{ .RelPermalink }}">← {{ .Title }}</a>
   {{ end }}
   {{ with .NextInSection }}
-    <a class="page-link" href="{{ .RelPermalink }}">{{ .Title }} &rarr;</a>
+    <a class="page-link" href="{{ .RelPermalink }}">{{ .Title }} →</a>
   {{ end }}
 </div>
 {{ end }}

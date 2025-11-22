@@ -1,13 +1,8 @@
 {{ define "title" }}{{ .Site.Title }}{{ end }}
 {{ define "main" }}
 <section class="hero">
-  <p class="eyebrow">워시퍼의 하루</p>
-  <h1>기술, 신앙, 일상에 대한 기록</h1>
+  <h1>워시퍼의 하루</h1>
   <p class="lede">{{ .Site.Params.description }}</p>
-  <div class="hero-actions">
-    <a class="button" href="/blog/">블로그 보기</a>
-    <a class="text-link" href="/index.xml">RSS 구독</a>
-  </div>
 </section>
 
 {{ $all := where .Site.RegularPages "Section" "blog" }}
